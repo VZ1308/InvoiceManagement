@@ -1,0 +1,29 @@
+﻿<Window x:Class="InvoiceManagement.AddInvoiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:InvoiceManagement.ViewModels"
+        Title="Rechnung hinzufügen" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="30">
+            <Label Content="Firmenname:"/>
+            <TextBox Text="{Binding CurrentInvoice.CompanyName}" IsReadOnly="True" />
+
+            <Label Content="Kundenname:"/>
+            <TextBox Text="{Binding CurrentInvoice.CustomerName, UpdateSourceTrigger=PropertyChanged}" />
+
+            <Label Content="Kundennummer:"/>
+            <TextBox Text="{Binding CurrentInvoice.CustomerNumber, UpdateSourceTrigger=PropertyChanged}" />
+
+            <Label Content="Warenbezeichnung:"/>
+            <TextBox Text="{Binding CurrentInvoice.ItemDescription, UpdateSourceTrigger=PropertyChanged}" />
+
+            <Label Content="Anzahl der Waren:"/>
+            <TextBox Text="{Binding CurrentInvoice.Quantity, UpdateSourceTrigger=PropertyChanged}" />
+
+            <Label Content="Preis pro Stück:"/>
+            <TextBox Text="{Binding CurrentInvoice.PricePerUnit, UpdateSourceTrigger=PropertyChanged}" />
+
+            <Button Click="SaveButton_Click" Margin="10" Width="100" Content="Speichern"/>
+        </StackPanel>
+    </Grid>
+</Window>
